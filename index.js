@@ -1,12 +1,25 @@
 //Function to create etch-a-sketch board with divs
 
-let numOfDivs = 256;
-
-for (let i = 0; i < numOfDivs; i++) {
-    let newDiv = document.createElement('div');
-    newDiv.style.height = '20px';
-    newDiv.style.width = '20px';
-    newDiv.style.border = '1px black solid';
-    newDiv.id = "div"+i;
-    container.appendChild(newDiv);
+let numOfDivs = 16;
+for (let i = 0; i < numOfDivs; i++){
+    let newRow = document.createElement('div')
+    container.appendChild(newRow);
+    for (let j = 0; j < numOfDivs; j++) {
+        let newDiv = document.createElement('div');
+        newDiv.style.border = '1px black solid';
+        newDiv.id = "div"+j;
+        newDiv.className = "gridSquares";
+        newRow.appendChild(newDiv);
+    }
 }
+
+let gridSquares = document.getElementsByClassName('gridSquares');
+
+// Squares change color when mouse hovers square
+for (let i = 0; i < gridSquares.length; i++) {
+    gridSquares[i].addEventListener('mouseenter', (e) =>{
+        gridSquares[i].style.backgroundColor = "black";
+    });
+}
+
+
