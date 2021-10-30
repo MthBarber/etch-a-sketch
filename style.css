@@ -1,5 +1,6 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color:rgb(143, 171, 172);
@@ -13,12 +14,18 @@ body {
     flex-basis: content;
     flex-grow: 1;
     flex-shrink: 1;
-    transition: 1s;
+    transition: 0.5s;
     
     
 }
 
-
+#button {
+    
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100px;
+    padding-top:50px;
+}
 
 
 #container {
@@ -31,7 +38,7 @@ body {
     flex-basis: content;
     border: 3px solid hotpink;
     height: 512px;
-    width: 500px;
+    width: 496px;
     background-color: white;
     padding: 0;
     gap: 0;

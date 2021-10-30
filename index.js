@@ -22,4 +22,12 @@ for (let i = 0; i < gridSquares.length; i++) {
     });
 }
 
+let restartButton = document.getElementById('restart');
+
+restartButton.addEventListener('click', () => {
+    for (let i = 0; i < gridSquares.length; i++) {
+    gridSquares[i].style.backgroundColor = "white";   
+    }
+    prompt("Enter a value to resize the grid");    
+});
 
