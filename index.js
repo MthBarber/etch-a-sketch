@@ -1,17 +1,23 @@
 //Function to create etch-a-sketch board with divs
 
 let numOfDivs = 16;
-for (let i = 0; i < numOfDivs; i++){
-    let newRow = document.createElement('div')
-    container.appendChild(newRow);
-    for (let j = 0; j < numOfDivs; j++) {
-        let newDiv = document.createElement('div');
-        newDiv.style.border = '1px black solid';
-        newDiv.id = "div"+j;
-        newDiv.className = "gridSquares";
-        newRow.appendChild(newDiv);
+//Creates the grid
+function setGrid(numOfDivs) {
+    for (let i = 0; i < numOfDivs; i++){
+        let newRow = document.createElement('div')
+        newRow.className = "row";
+        container.appendChild(newRow);
+        for (let j = 0; j < numOfDivs; j++) {
+            let newDiv = document.createElement('div');
+            newDiv.style.border = '1px black solid';
+            newDiv.id = "div" + j;
+            newDiv.className = "gridSquares";
+            newRow.appendChild(newDiv);
+        }
     }
 }
+//First call to make the intitial grid when the page opens
+setGrid(numOfDivs);
 
 let gridSquares = document.getElementsByClassName('gridSquares');
 
@@ -25,9 +31,15 @@ for (let i = 0; i < gridSquares.length; i++) {
 let restartButton = document.getElementById('restart');
 
 restartButton.addEventListener('click', () => {
-    for (let i = 0; i < gridSquares.length; i++) {
-    gridSquares[i].style.backgroundColor = "white";   
-    }
-    prompt("Enter a value to resize the grid");    
+   
+    
+
+    
+    //numOfDivs = prompt("Enter a value to resize the grid");
+    
+    //setGrid(numOfDivs);
+        
 });
+
+//function to clear grid when altering grid
 

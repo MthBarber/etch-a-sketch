@@ -7,7 +7,7 @@ body {
 }
 
 .gridSquares {
-    height: 30px;
+    height: 29px;
     width: 29px;
     margin: 0;
     padding: 0;
@@ -29,16 +29,15 @@ body {
 
 
 #container {
-    display:flex;
+    display: flex;
     overflow: hidden;
     flex-wrap: wrap;
     margin: auto;
-    justify-content: space-evenly;
     align-content: stretch;
     flex-basis: content;
     border: 3px solid hotpink;
     height: 512px;
-    width: 496px;
+    width: auto;
     background-color: white;
     padding: 0;
     gap: 0;
