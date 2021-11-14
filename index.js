@@ -1,3 +1,5 @@
+let container = document.getElementById('container');
+
 //Function to create etch-a-sketch board with divs
 
 let numOfDivs = 16;
@@ -18,28 +20,51 @@ function setGrid(numOfDivs) {
 }
 //First call to make the intitial grid when the page opens
 setGrid(numOfDivs);
-
+// define gridsquares so they can be called by a function
 let gridSquares = document.getElementsByClassName('gridSquares');
 
+// define rows so they can be called by a function
+let rows = document.getElementsByClassName('row');
+
 // Squares change color when mouse hovers square
-for (let i = 0; i < gridSquares.length; i++) {
-    gridSquares[i].addEventListener('mouseenter', (e) =>{
-        gridSquares[i].style.backgroundColor = "black";
-    });
+function highlightSquares() {
+    for (let i = 0; i < gridSquares.length; i++) {
+        gridSquares[i].addEventListener('mouseenter', (e) =>{
+            gridSquares[i].style.backgroundColor = "black";
+        });
+    }
 }
 
+highlightSquares();
+//add button event listeners
 let restartButton = document.getElementById('restart');
 
 restartButton.addEventListener('click', () => {
    
-    
+    removeGrid(rows);
 
     
-    //numOfDivs = prompt("Enter a value to resize the grid");
-    
-    //setGrid(numOfDivs);
+    createGrid();
+    removeGrid(rows);
+    setGrid(numOfDivs);
+    highlightSquares();
         
 });
 
 //function to clear grid when altering grid
+function removeGrid(){
+    while (rows.length > 0) {
+        rows[0].parentNode.removeChild(rows[0]);
+    }
+}
 
+//create function to create new grid as we need to limit grid size to 64 x 64
+
+function createGrid() {
+    numOfDivs = prompt("Enter a value to resize the grid");
+    if (numOfDivs > 64) {
+        numOfDivs = prompt("Grid cannot exceed 64 x 64, please enter a value to resize the grid");
+    }else {
+        setGrid(numOfDivs);
+    }  
+}
