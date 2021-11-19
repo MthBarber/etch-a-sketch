@@ -3,18 +3,38 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color:rgb(143, 171, 172);
+    background-color:#99D3DF;
+    padding: 0;
+    margin: 0;;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    gap: 0;
+    flex-basis: auto;
+    flex-grow:2;
+    flex-shrink: 1;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+
 }
 
 .gridSquares {
-    height: 25px;
-    width: 25px;
+    display: flex;
+    min-height: 5px;
+    min-width: 5px;
+    max-height:110px;
     margin: 0;
     padding: 0;
-    flex-basis: content;
-    flex-grow: 1;
+    flex-basis: auto;
+    flex-grow: 2;
     flex-shrink: 1;
     transition: 0.5s;
+    flex-wrap: nowrap;
+    
     
     
 }
@@ -23,22 +43,46 @@ body {
     
     display: flex;
     justify-content: center;
-    padding-bottom: 100px;
-    padding-top:50px;
+    padding-bottom: 50px;
+    padding-top:25px;
+    
+}
+#title {
+    font-family: 'praise';
+    color: #1394e4;
+    text-align: center;
+    font-size: 4rem;
+    text-decoration: underline;
+    padding-top: 10px;
+}
+.buttons {
+    background-color: white;
+    color: #1394e4;
+    font: 'praise';
+    border-radius: 10px;
+    border: 1px solid darkgrey;
+}
+
+.buttons:hover {
+    background-color:khaki;
+    box-shadow: none;
+
 }
 
 
 #container {
     display: flex;
     overflow: hidden;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     margin: auto;
-    align-content: stretch;
+    align-content:flex-start;
     flex-basis: content;
-    border: 3px solid hotpink;
-    height: 512px;
-    width: auto;
-    background-color: white;
+    border: 3px solid #CDCDCD;
+    min-height: 550px;
+    min-width: 550px;
+    max-width: 550px;
+    max-height: 550px;
+    background-color: #E9E9E9;
     padding: 0;
     gap: 0;
     

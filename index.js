@@ -11,7 +11,7 @@ function setGrid(numOfDivs) {
         container.appendChild(newRow);
         for (let j = 0; j < numOfDivs; j++) {
             let newDiv = document.createElement('div');
-            newDiv.style.border = '1px black solid';
+            //newDiv.style.border = '1px black solid';
             newDiv.id = "div" + j;
             newDiv.className = "gridSquares";
             newRow.appendChild(newDiv);
@@ -41,12 +41,8 @@ let restartButton = document.getElementById('restart');
 
 restartButton.addEventListener('click', () => {
    
-    removeGrid(rows);
-
-    
+    removeGrid(rows);    
     createGrid();
-    removeGrid(rows);
-    setGrid(numOfDivs);
     highlightSquares();
         
 });
@@ -62,9 +58,37 @@ function removeGrid(){
 
 function createGrid() {
     numOfDivs = prompt("Enter a value to resize the grid");
-    if (numOfDivs > 64) {
-        numOfDivs = prompt("Grid cannot exceed 64 x 64, please enter a value to resize the grid");
+    if (numOfDivs > 100) {
+        numOfDivs = prompt("Grid cannot exceed 100 x 100, please enter a value to resize the grid");
     }else {
         setGrid(numOfDivs);
     }  
 }
+//random color generator
+
+function highlightSquaresRandom() {
+    for (let i = 0; i < gridSquares.length; i++) {
+        gridSquares[i].addEventListener('mouseenter', (e) =>{
+            const randomColor = Math.floor(Math.random()*16777215).toString(16);
+            gridSquares[i].style.backgroundColor = '#' + randomColor;
+        });
+    }
+}
+//switch on/off value random colour
+let onOffValue = document.getElementById('random').value;
+
+//random color button
+let randomButton = document.getElementById('random');
+
+randomButton.addEventListener('click', () => {
+   if (onOffValue ==="off"){
+        removeGrid(rows);    
+        createGrid();
+        highlightSquaresRandom();
+        onOffValue = "on";
+   }else {
+    highlightSquares();
+    onOffValue = "off";
+   }
+           
+});
