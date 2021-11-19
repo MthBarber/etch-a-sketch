@@ -82,8 +82,6 @@ let randomButton = document.getElementById('random');
 
 randomButton.addEventListener('click', () => {
    if (onOffValue ==="off"){
-        removeGrid(rows);    
-        createGrid();
         highlightSquaresRandom();
         onOffValue = "on";
    }else {
