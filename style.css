@@ -3,9 +3,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color:#99D3DF;
+    background-color:#ffffff;
     padding: 0;
-    margin: 0;;
+    margin: 0;
+    font-family: 'DotGothic16', sans-serif;
 }
 
 .row {
@@ -48,19 +49,20 @@ body {
     
 }
 #title {
-    font-family: 'praise';
+    
     color: #1394e4;
     text-align: center;
     font-size: 4rem;
-    text-decoration: underline;
+    text-decoration: underline dashed;
     padding-top: 10px;
 }
 .buttons {
     background-color: white;
-    color: #1394e4;
-    font: 'praise';
-    border-radius: 10px;
-    border: 1px solid darkgrey;
+    color: #c70707;
+    font-family: 'DotGothic16', sans-serif;
+    font-size: medium;
+    margin: auto 1rem auto auto;
+    border: 1px dashed darkgrey;
 }
 
 .buttons:hover {
